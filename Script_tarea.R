@@ -51,6 +51,10 @@ Altura.tsuga <- subset(Tsuga, Tsuga$Altura > 18.5)
 Douglasia <- subset(conjunto, 
                     conjunto$Especie == "F")
 
+HyF <- rbind(Tsuga, Douglasia)
+
+ts.dou <- subset(conjunto, conjunto$Especie == "H" | conjunto$Especie == "F")
+
 Diametro.dou <- subset(Douglasia, Douglasia$Diametro <= 16.9)
 
 Altura.dou <- subset(Douglasia, Douglasia$Altura > 18.5)
@@ -65,6 +69,22 @@ hist(conjunto$Vecinos, col="pink" , xlab ="Vecinos" , ylab="Frecuencia" ,
 
 hist(conjunto$Diametro, col="orange" , xlab = "Diámetro", ylab="Frecuencia" ,
      main="Histograma de diámetro")
+
+hist(H.media$Altura, col="blue" , xlab=)
+
+# 3 graficas --------------------------------------------------------------
+
+par(mfrow=c(2,2))
+hist(Tsuga$Altura, main = "Altura especie H",
+     col="green", xlab= "Alturas", ylab="Frecuencia")
+hist(Douglasia$Altura, main= "Altura especie F", 
+     col="gray", xlab="Alturas", ylab="Frecuencia")
+hist(Tsuga$Diametro, main = "Diametro especie H", 
+     col="green", xlab="Diametros", ylab="Frecuencia")
+hist(Douglasia$Diametro, main = "Diametro especie F", 
+     col="gray", xlab="Diametros", ylab="Frecuencia")
+par(mfrow=c(1,1))
+
 
 # Desviación estandar -----------------------------------------------------
 
